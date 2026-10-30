@@ -12,7 +12,7 @@ EXIT_NO_DATA=3
 HUBS=("ai4c-hosp:ai4castinghub/hospitalization-forecast" "ai4c-rvdss:ai4castinghub/rvdss-forecast")
 
 # coming Saturday, or today if it is one (date +%u: Saturday=6)
-REF=${REF:-$(date -u -d "+$(( (6 - $(date -u +%u) + 7) % 7 )) days" +%F)}
+REF=${REF:-$(python3 -c "import datetime as d; t=d.datetime.now(d.timezone.utc).date(); print(t + d.timedelta((5 - t.weekday()) % 7))")}
 FILE="model-output/$MODEL/$REF-$MODEL.csv"
 BRANCH="$MODEL-$REF"
 [[ -n "${DRY_RUN:-}" || -n "${GH_TOKEN:-}" ]] || { echo "[submit] GH_TOKEN is empty: set the HUB_TOKEN secret" >&2; exit 1; }
