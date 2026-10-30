@@ -12,4 +12,4 @@ uv venv --python 3.12 && uv pip install -r requirements.txt
 .venv/bin/python forecast.py ai4c-hosp <hub checkout> 2026-10-31 out
 ```
 
-`submit.sh` runs on Fridays and Saturdays (`run_local.sh` under launchd, or the GitHub Action with a `HUB_TOKEN` secret) and opens the PR once the round's data is out.
+`submit.sh` runs on Fridays and Saturdays from a scheduled workflow in [respicast-chronos2](https://github.com/pedro-f20/respicast-chronos2/blob/main/.github/workflows/ai4casting.yml) and opens the PR once the round's data is out.
