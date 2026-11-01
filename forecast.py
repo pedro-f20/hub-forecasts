@@ -37,6 +37,13 @@ def main() -> None:
         sys.exit(EXIT_NO_DATA)
     tasks = hub / "hub-config" / "tasks.json"
     history = history[history.location.astype(str).isin(allowed(tasks, spec, "location"))]
+    # the freshness check above is over all series; a series more than a week behind would be forecast
+    # from old data, so leave it out and say so
+    last = history.groupby(["target", "location"]).date.max()
+    stale = last[last < expected_last - pd.Timedelta(days=7)]
+    if len(stale):
+        print(f"[forecast] {name} {ref.date()}: leaving out stale series {[f'{t}|{l}' for t, l in stale.index]}")
+        history = history.set_index(["target", "location"]).drop(stale.index).reset_index()
     ends = [spec.target_end_date(ref, h) for h in spec.horizons]
     rows = core.to_hub_rows(core.chronos2_quantiles(history, ends, spec.quantiles), spec, ref)
     problems = core.check_against_tasks(rows, spec, tasks)
