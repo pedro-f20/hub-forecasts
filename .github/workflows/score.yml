@@ -1,0 +1,38 @@
+name: Weekly live score
+
+on:
+  schedule:
+    - cron: "0 12 * * 0"  # Sunday: both hubs' truth lands Fri afternoon to Sat ~01:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write  # commits SEASON.md and scores.json
+
+jobs:
+  score:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Install
+        run: |
+          uv venv --python 3.12
+          uv pip install -c requirements.lock pandas numpy  # lockfile pins, without torch
+
+      - name: Score
+        run: |
+          .venv/bin/python -m unittest test_scoreboard
+          .venv/bin/python scoreboard.py
+
+      - name: Commit scoreboard
+        run: |
+          git add SEASON.md scores.json
+          git diff --cached --quiet && exit 0
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -q -m "Update season scoreboard"
+          git pull -q --rebase
+          git push -q
