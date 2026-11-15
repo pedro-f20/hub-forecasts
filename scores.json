@@ -1,24 +1,14 @@
 {
-  "headline": "37% less error than the hub ensemble",
+  "headline": "Only outside team so far; 37% less error than the hub ensemble",
   "period": "2026-27 season, 2 rounds scored, interim; updated 2026-11-15",
   "rows": [
     {
-      "measure": "Us vs hub ensemble, hospital beds",
-      "value": "0.60",
-      "range": "63 cells"
-    },
-    {
-      "measure": "Us vs hub ensemble, lab positivity",
-      "value": "0.64",
-      "range": "147 cells"
-    },
-    {
-      "measure": "Us vs hub ensemble, overall",
+      "measure": "Us vs hub ensemble",
       "value": "0.63",
       "range": "210 cells"
     },
     {
-      "measure": "Us vs baseline, overall",
+      "measure": "Us vs baseline",
       "value": "0.63",
       "range": "210 cells"
     }

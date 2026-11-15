@@ -19,3 +19,17 @@ By round, vs AI4Casting_Hub-Ensemble_v1:
 | 2026-10-31 | lab positivity | 0.65 | 99 |
 | 2026-11-07 | hospital beds | 0.72 | 21 |
 | 2026-11-07 | lab positivity | 0.57 | 48 |
+
+Vs every outside team, both hubs (ranked: shares at least half the widest overlap):
+
+| team | ratio | cells | ranked |
+|---|---|---|---|
+| JHU-DMD | - | 0 | no |
+| JHU-DMD_memory | - | 0 | no |
+| JHUAPL-DMD | - | 0 | no |
+| JHUAPL-DMD_memory | - | 0 | no |
+| UBCStat-ARX_Ensemble | - | 0 | no |
+| UBCStat-Climate | - | 0 | no |
+| UGuelph-CompositeCurve | - | 0 | no |
+| UGuelph_AIDM-AdaptEns | - | 0 | no |
+| VTSanghani-PRIME | - | 0 | no |
