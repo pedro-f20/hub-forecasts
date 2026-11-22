@@ -4,21 +4,23 @@ Interim. WIS from the 7 quantiles against the latest truth, cells both models fo
 
 | hub | comparator | ratio | cells | rounds |
 |---|---|---|---|---|
-| hospital beds | AI4Casting_Hub-Ensemble_v1 | 0.60 | 63 | 2 |
-| hospital beds | AI4Casting_Hub-Quantile_Baseline | 0.73 | 63 | 2 |
-| lab positivity | AI4Casting_Hub-Ensemble_v1 | 0.64 | 147 | 2 |
-| lab positivity | AI4Casting_Hub-Quantile_Baseline | 0.59 | 147 | 2 |
-| overall | AI4Casting_Hub-Ensemble_v1 | 0.63 | 210 | 2 |
-| overall | AI4Casting_Hub-Quantile_Baseline | 0.63 | 210 | 2 |
+| hospital beds | AI4Casting_Hub-Ensemble_v1 | 0.61 | 126 | 3 |
+| hospital beds | AI4Casting_Hub-Quantile_Baseline | 0.77 | 126 | 3 |
+| lab positivity | AI4Casting_Hub-Ensemble_v1 | 0.67 | 309 | 3 |
+| lab positivity | AI4Casting_Hub-Quantile_Baseline | 0.60 | 303 | 3 |
+| overall | AI4Casting_Hub-Ensemble_v1 | 0.65 | 435 | 3 |
+| overall | AI4Casting_Hub-Quantile_Baseline | 0.65 | 429 | 3 |
 
 By round, vs AI4Casting_Hub-Ensemble_v1:
 
 | round | hub | ratio | cells |
 |---|---|---|---|
-| 2026-10-31 | hospital beds | 0.54 | 42 |
-| 2026-10-31 | lab positivity | 0.65 | 99 |
-| 2026-11-07 | hospital beds | 0.72 | 21 |
-| 2026-11-07 | lab positivity | 0.57 | 48 |
+| 2026-10-31 | hospital beds | 0.54 | 63 |
+| 2026-10-31 | lab positivity | 0.64 | 153 |
+| 2026-11-07 | hospital beds | 0.67 | 42 |
+| 2026-11-07 | lab positivity | 0.59 | 102 |
+| 2026-11-14 | hospital beds | 0.69 | 21 |
+| 2026-11-14 | lab positivity | 1.00 | 54 |
 
 Vs every outside team, both hubs (ranked: shares at least half the widest overlap):
 
